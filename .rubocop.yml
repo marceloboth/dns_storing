@@ -1,0 +1,16 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+Rails:
+  Enabled: true
+Metrics/LineLength:
+  Max: 100
+Documentation:
+  Enabled: false
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - bin/**/*
