@@ -13,14 +13,16 @@ gem 'sqlite3', '~> 1.4'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'factory_bot_rails'
 
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+
+  gem 'jazz_fingers'
 end
 
 group :development do
