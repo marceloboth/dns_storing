@@ -24,7 +24,7 @@ RSpec.describe DnsController do
       end
 
       it { expect(response).to have_http_status(:created) }
-      it { expect(response.content_type).to eq('application/json') }
+      it { expect(json_body[:id]).to eq(1) }
     end
 
     context 'with invalid request params' do
@@ -33,7 +33,8 @@ RSpec.describe DnsController do
       end
 
       it { expect(response).to have_http_status(:unprocessable_entity) }
-      it { expect(response.content_type).to eq('application/json') }
+      it { expect(json_body[:errors][:ip].first).to eq("can't be blank") }
+      it { expect(json_body[:errors][:hostnames].first).to eq("can't be blank") }
     end
   end
 end
